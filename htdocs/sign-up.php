@@ -1,22 +1,23 @@
+<?php
+  include("connection.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <title>Services - Iligan City Job Services</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="website-header-div">
-      <h2 class="website-logo-text">Iligan Services</h2>
-    </div>
-    <div class="navigation-bar-container">
-      <div class="navigation-div-text">
-        <a href="home.php">Home</a>
-      </div>  
-      <div class="sign-in-sign-up-div">
-        <a href="sign-in.php" class="float">Sign in /</a>
-        <a href="sign-up.php" class="float">Sign up</a>
-      </div>
-    </div>
+  <h3>Sign up</h3>
+
+    <form action="formhandler.inc.php" method="POST">
+    <input type="text" name="firstname" placeholder="First name" required><br><br>
+    <input type="text" name="lastname" placeholder="Last Name" required><br><br>
+    <input type="text" name="email" placeholder="Email" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <input type="text" name="service" placeholder="Service to offer eg. Tutoring" required><br><br>
+    <button>Sign in</button>
+   </form>
 </body>
 </html>

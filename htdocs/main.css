@@ -10,16 +10,54 @@ blue-black (#0F1035)
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.hover:hover{
+  color: orange;
+  text-decoration: underline;
+}
+.container{
+  display: flex;
+}
+.flex-start{
+  justify-content: flex-start;
+}
+#sticky{
+  position: sticky;
+  top: 0;
+}
+
+/*Search Bar Styles*/
+#search-bar{
+margin-left: 1.5rem;
+margin-right: 0.5rem;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+size: ;
+}
+#search-button{
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.3rem;
+  border: none;
+}
+#search-button:hover{ 
+  background-color: orange;
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
 body{
   margin: 0;
 }
 
 /*Navigation bar styles*/
-
+.navigationContainer{
+  display: flex;
+}
 .website-logo-text1{
     font-size: 2.5rem;
     font-weight: bold;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     margin-bottom: 0;
     margin-left: 2rem;
     margin-right: 0;
@@ -33,6 +71,19 @@ body{
     padding: 0;
     font-style: italic;
 }
+
+@media only screen and (max-width: 600px){
+  .website-logo-text1{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+.website-logo-text2{
+    margin-bottom: 0.7rem;
+    margin-left: 5rem;
+    font-style: italic;
+}
+}
+
 
 .navigation-container{
     display: flex;
@@ -61,12 +112,14 @@ body{
     border: none; 
     border-top: 0.5px solid rgb(199, 199, 199);
 }
+
 /*Services List Div Styles*/
 .services-list-div{
   background-color: #007bff;
   color: white;
   font-size: 1.5rem;
   width: 100%;
+  margin-bottom: 1.5rem;
 }
 
 .services-list-div p{
