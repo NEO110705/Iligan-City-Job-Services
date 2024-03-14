@@ -6,7 +6,6 @@
         $lastname = $_POST["lastname"];
         $email = $_POST["email"];
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        $service = $_POST["service"];
 
         try {
             require_once "connection.php";
