@@ -23,27 +23,6 @@ blue-black (#0F1035)
   top: 0;
 }
 
-/*Search Bar Styles*/
-#search-bar{
-margin-left: 1.5rem;
-margin-right: 0.5rem;
-padding-top: 0.5rem;
-padding-bottom: 0.5rem;
-}
-
-#search-button{
-  background-color: #007bff;
-  color: white;
-  border-radius: 0.3rem;
-  border: none;
-}
-#search-button:hover{ 
-  background-color: orange;
-  color: white;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
 body{
   margin: 0;
 }
@@ -108,7 +87,7 @@ body{
   font-size: 1.5rem;
   width: 100%;
   margin-bottom: 1.5rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 .services-list-div p{
@@ -153,3 +132,15 @@ body{
   .advisory-remove-button:hover{
     color: black;
   }
+
+  /*Index.php styles*/
+
+.custom-container{
+  display: flex; !important
+}
+.justify-content-between{
+  justify-content: space-between;  !important
+}
+.links{
+  text-decoration: none;
+}

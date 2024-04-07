@@ -1,6 +1,5 @@
 <?php
 include "connection.php";
-include "header.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +21,7 @@ include "header.php";
         <div class="row align-items-center">
           <div class="col-lg-4">
             <span class="navbar-brand fs-2 text-light">
-              In<b>Reach</b>
+              <a href="index.php" class="text-light text-decoration-none"><b>Reach</b></a>
             </span>
           </div>
           <div class="col-lg-4">
@@ -45,10 +44,6 @@ include "header.php";
 
   </nav>
 
-
-
-
-
   <div>
     <div class="navigation-container">
       <div class="float-item">
@@ -56,30 +51,6 @@ include "header.php";
       </div>
     </div>
   </div>
-
-  <div class="box" id="myDiv">
-    <div class="advisory-message">
-      <div class="advisory-text-div">
-        <h3>ADVISORY!</h3>
-        <button class="advisory-remove-button" onclick="hideDiv()">&#10005;</button>
-      </div>
-
-      <div>
-        <p class="advisory-paragraph">InReach is dedicated to offering information about various In-person service providers in Iligan City. The details provided here are sourced from local service providers and adhere to the goals established by the InReach.</p>
-        <p class="advisory-paragraph">It's important to clarify that InReach is not involved in the processing or facilitation of service applications. Any inquiries, service requests, or related questions should be directed to the respective service providers whose contact information is made available on this website.</p>
-        <p class="advisory-paragraph">It's crucial to note that the Iligan City Community Services does not guarantee the accuracy, completeness, or suitability of the information presented on this platform. We disclaim any legal liability or responsibility for the outcomes arising from the use of the information provided. Users are encouraged to verify details directly with the concerned service providers.</p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function hideDiv() {
-      var div = document.getElementById('myDiv');
-      div.classList.add('hidden');
-    }
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
