@@ -48,6 +48,7 @@ include "changeName.php";
               <?php
               $userId = $user["userId"];
               $firstname = $user["firstname"];
+              $lastname = $user["lastname"];
               $profilePicture = $user["profilePicture"];
               ?>
               <div class="row mt-5 d-flex justify-content-center">
@@ -69,7 +70,8 @@ include "changeName.php";
           <?php
           if (isset($_FILES["profilePicture"]["name"])) {
             $userId = $_POST["userId"];
-            $username = $_POST["firstname"];
+            $firstname = $_POST["firstname"];
+            $lastname = $_POST["lastname"];
 
             $imageName = $_FILES["profilePicture"]["name"];
             $imageSize = $_FILES["profilePicture"]["size"];
@@ -106,12 +108,9 @@ include "changeName.php";
           ?>
 
           <div class="row">
-            <div id="user_profile">
+            <h1 class="text-dark mb-0 fs-3">
               <span id="firstname"><?php echo $firstname; ?></span>
               <span id="lastname"><?php echo $lastname; ?></span>
-              <button onclick="enableEditing()">Edit</button>
-            </div>
-            <h1 class="text-dark mb-0 fs-3">Alwyn Jade Reuyan
               <button class="button p-0 me-2"><img src="img/websiteImages/editIcon.png" class="" alt="edit icon"></button>
               <p class="badge text-bg-primary fs-6  m-0">Verified user &#10003</p>
             </h1>
