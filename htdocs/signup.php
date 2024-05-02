@@ -1,26 +1,23 @@
-<?php
-include "databaseConnection.php";
-include_once "signuphandler.inc.php";
-?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="sign-up-css.css">
+  <link rel="stylesheet" href="main.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>Sign up - InReach</title>
 </head>
 
-<body>
+<body class="bg-grey"">
 <?php 
-  include "header.php";
+include "header.php";
 ?>
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-7 col-sm-8 col-lg-5 col-xxl-4 border px-5 shadow rounded-4 mt-5">
-            <form action="signuphandler.inc.php" class="bg-body-success input-group-sm">
+        <div class=" bg-white col-md-7 col-sm-8 col-lg-5 col-xxl-4 border px-5 shadow rounded-1 mt-5">
+            <form action="signupHandler.php" method="POST" class="bg-body-success input-group-sm">
                 <div class=" mb-3 mt-4">
                     <h2 class="text-center">Sign Up</h2>
                 </div>
@@ -51,7 +48,7 @@ include_once "signuphandler.inc.php";
                     <button type="submit" class="btn btn-lg btn-primary shadow ">Sign up</button>
                 </div>
                 <div>
-                    <p class="text-center">Already have an account? <a href="login.php"><u>Log in</u></a></p>
+                    <p class="text-center mb-5">Already have an account? <a href="login.php"><u>Log in</u></a></p>
                 </div>
             </form>
         </div>

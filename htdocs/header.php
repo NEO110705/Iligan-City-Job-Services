@@ -3,7 +3,7 @@
     <div class="container">
       <a class="navbar-brand fs-2" href="index.php">
         In<b>Reach</b>
-        <img src="img/websiteImages/logo.png" alt="InReach Logo" width="45" height="45" class="d-inline-block align-text-top fs-2">
+        <img src="img/logo.png" alt="InReach Logo" width="45" height="45" class="d-inline-block align-text-top fs-2">
       </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -22,7 +22,7 @@ include "changeName.php";
         <div class="col">
           <a class="navbar-brand fs-2" href="index.php">
             In<b>Reach</b>
-            <img src="img/websiteImages/logo.png" alt="InReach Logo" width="45" height="45" class="d-inline-block align-text-top fs-2">
+            <img src="img/logo.png" alt="InReach Logo" width="45" height="45" class="d-inline-block align-text-top fs-2">
           </a>
         </div>
 
@@ -38,7 +38,7 @@ include "changeName.php";
         <div class="bg-light box h-100 d-flex row border border-1 p-0 m-0 ">
 
           <?php
-          $_SESSION["userId"] = 1;
+          $_SESSION["userId"] = 1; //change this id to whoever is currently logged in
           $sessionId = $_SESSION["userId"];
           $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE userId = $sessionId"));
           ?>
@@ -49,6 +49,7 @@ include "changeName.php";
               $userId = $user["userId"];
               $firstname = $user["firstname"];
               $lastname = $user["lastname"];
+              $email = $user["email"];
               $profilePicture = $user["profilePicture"];
               ?>
               <div class="row mt-5 d-flex justify-content-center">
@@ -62,16 +63,16 @@ include "changeName.php";
               </div>
             </div>
           </form>
-          <script type="text/javascript">
+          <script type="text/javascript"> // when profile picture changes value, it automatically changes
             document.getElementById("profilePicture").onchange = function() {
               document.getElementById("form").submit();
             };
           </script>
           <?php
           if (isset($_FILES["profilePicture"]["name"])) {
-            $userId = $_POST["userId"];
-            $firstname = $_POST["firstname"];
-            $lastname = $_POST["lastname"];
+            $userId = $user["userId"];
+            $firstname = $user["firstname"];
+            $lastname = $user["lastname"];
 
             $imageName = $_FILES["profilePicture"]["name"];
             $imageSize = $_FILES["profilePicture"]["size"];
@@ -111,10 +112,10 @@ include "changeName.php";
             <h1 class="text-dark mb-0 fs-3">
               <span id="firstname"><?php echo $firstname; ?></span>
               <span id="lastname"><?php echo $lastname; ?></span>
-              <button class="button p-0 me-2"><img src="img/websiteImages/editIcon.png" class="" alt="edit icon"></button>
-              <p class="badge text-bg-primary fs-6  m-0">Verified user &#10003</p>
+              <button class="button p-0 me-2"></button>
+              <span class="badge text-bg-primary fs-6  m-0">Verified user &#10003</span>
             </h1>
-            <h6 class="fw-light text-secondary "><img src="img/websiteImages/emailIcon.png" class="me-1" alt="email icon">alwynjadelreuyan@gmail.com</h6>
+            <h6 class="fw-light text-secondary ">&#128231; <?php echo $email; ?></h6>
           </div>
           <div class="description">
             <form action="" method="post" id="form" class="form">

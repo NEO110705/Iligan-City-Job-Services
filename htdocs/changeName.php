@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $new_firstname = $_POST["new_firstname"];
         $new_lastname = $_POST["new_lastname"];
         
-        $user_id = $_SESSION['user_id'];
+        $user_id = $_SESSION['user_Id'];
 
         $sql = "UPDATE user SET firstname='$new_firstname', lastname='$new_lastname' WHERE user_id='$user_id'";
 
