@@ -33,14 +33,12 @@ include "changeName.php";
 
 
   <div class="container-fluid p-0">
-    <div class="row gx-0">
+    <div class="row gx-0 fullscreen">
       <div class="col-lg-5 col-md-5 col-sm-12">
         <div class="bg-light box h-100 d-flex row border border-1 p-0 m-0 ">
 
-          <?php
-          $_SESSION["userId"] = 1; //change this id to whoever is currently logged in
-          $sessionId = $_SESSION["userId"];
-          $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE userId = $sessionId"));
+        <?php
+          include "fetchInfo.inc.php"; //this file indentifies who is logged in using session
           ?>
 
           <form class="form" id="form" action="" enctype="multipart/form-data" method="post">
@@ -54,7 +52,7 @@ include "changeName.php";
               ?>
               <div class="row mt-5 d-flex justify-content-center">
                 <div class="d-flex justify-content-center col-7 col-md-8">
-                  <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid" src="img/<?php echo $profilePicture; ?>" style="max-width: 250px; max-height: 250px;" title="<?php echo $profilePicture; ?>">
+                  <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid" src="img/<?php include 'issetProfilePicture.inc.php'; ?>" style="max-width: 250px; max-height: 250px;" title="<?php $profilePicture ?>">
 
                 </div>
               </div>

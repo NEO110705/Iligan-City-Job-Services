@@ -1,3 +1,13 @@
 <?php
-session_start();
-if ($){}
+
+if ($_SESSION['userId']){
+
+    $profilePicture = $user["profilePicture"];
+    $defaultProfilePicture = "<img src='img/defaultProfilePicture.png'>";
+    
+    if ($profilePicture !== null){
+        echo $profilePicture;
+    }else{
+        echo $defaultProfilePicture;
+    }
+}
