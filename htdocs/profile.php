@@ -54,7 +54,8 @@ include "changeName.php";
               ?>
               <div class="row mt-5 d-flex justify-content-center">
                 <div class="d-flex justify-content-center col-7 col-md-8">
-                  <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid " src="img/<?php echo $profilePicture; ?>" width="250" height="250" title="<?php echo $profilePicture; ?>">
+                  <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid" src="img/<?php echo $profilePicture; ?>" style="max-width: 250px; max-height: 250px;" title="<?php echo $profilePicture; ?>">
+
                 </div>
               </div>
               <div class="row mb-4">
@@ -63,7 +64,8 @@ include "changeName.php";
               </div>
             </div>
           </form>
-          <script type="text/javascript"> // when profile picture changes value, it automatically changes
+          <script type="text/javascript">
+            // when profile picture changes value, it automatically changes
             document.getElementById("profilePicture").onchange = function() {
               document.getElementById("form").submit();
             };

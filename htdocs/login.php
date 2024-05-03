@@ -14,7 +14,7 @@ include "databaseConnection.php";
   <title>Sign up - InReach</title>
 </head>
 
-<body class="bg-grey">
+<body class="bg-custom">
 <?php 
   include "header.php";
 ?>
@@ -24,11 +24,11 @@ include "databaseConnection.php";
         <div class="col-md-7 col-sm-8 col-lg-5 col-xxl-4 border px-5 shadow rounded-1 mt-5 bg-white">
             <form action="">
                 <div class=" mb-3 mt-4">
-                    <h2 class="text-center">Login</h2>
+                    <h1 class="text-center">Login</h1>
                 </div>
                 
                 <div class=" form-floating  mb-3">
-                    <input type="email" class="form-control shadow-sm" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" class="form-control shadow-sm" id="email" name="email" required>
                     <label for="email" class="form-label">Email:</label>
                     <div class="form-text">We'll never share your email with anyone else.</div>
                 </div>

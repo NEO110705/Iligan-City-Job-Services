@@ -10,7 +10,7 @@
   <title>Sign up - InReach</title>
 </head>
 
-<body class="bg-grey"">
+<body class="bg-custom">
 <?php 
 include "header.php";
 ?>
@@ -19,7 +19,7 @@ include "header.php";
         <div class=" bg-white col-md-7 col-sm-8 col-lg-5 col-xxl-4 border px-5 shadow rounded-1 mt-5">
             <form action="signupHandler.php" method="POST" class="bg-body-success input-group-sm">
                 <div class=" mb-3 mt-4">
-                    <h2 class="text-center">Sign Up</h2>
+                    <h1 class="text-center">Sign Up</h1>
                 </div>
                 <div class=" form-floating  mb-3">
                     <input type="text" class="form-control shadow-sm " id="firstname" name="firstname" placeholder="Enter your first name" required>
