@@ -3,6 +3,7 @@ session_start();
 include_once "databaseConnection.php";
 include "changeName.php";
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,21 +26,34 @@ include "changeName.php";
             <img src="img/logo.png" alt="InReach Logo" width="45" height="45" class="d-inline-block align-text-top fs-2">
           </a>
         </div>
-
       </div>
     </nav>
   </header>
-
-
 
   <div class="container-fluid p-0">
     <div class="row gx-0 fullscreen">
       <div class="col-lg-5 col-md-5 col-sm-12">
         <div class="bg-light box h-100 d-flex row border border-1 p-0 m-0 ">
 
-        <?php
-          include "fetchInfo.inc.php"; //this file indentifies who is logged in using session
-          ?>
+          <?php
+          
+          if(isset($_SESSION["loggedInUserId"])) {
+
+              $userId = $_SESSION["loggedInUserId"];
+          
+              echo "Logged in user ID: " . $userId;
+
+          } else {
+
+              echo "<script>window.location.href='login.php';</script>";
+              exit(); 
+          }
+          
+
+          $userId = $_SESSION["loggedInUserId"];
+          $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE userId = $userId"));
+
+        ?>
 
           <form class="form" id="form" action="" enctype="multipart/form-data" method="post">
             <div class="upload d-flex row">
@@ -50,12 +64,27 @@ include "changeName.php";
               $email = $user["email"];
               $profilePicture = $user["profilePicture"];
               ?>
+
               <div class="row mt-5 d-flex justify-content-center">
                 <div class="d-flex justify-content-center col-7 col-md-8">
-                  <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid" src="img/<?php include 'issetProfilePicture.inc.php'; ?>" style="max-width: 250px; max-height: 250px;" title="<?php $profilePicture ?>">
+                  <!-- Profile Picture Container with Fixed Aspect Ratio -->
+                  <div class="embed-responsive embed-responsive-1by1" style="max-width: 250px;">
+           
+                    <img class="rounded-circle border border-5 shadow border-primary p-1 img-fluid embed-responsive-item" src="<?php
+                                                                                                                                if ($_SESSION['loggedInUserId']) {
+                                                                                                                                  $profilePicture = $user["profilePicture"];
+                                                                                                                                  $defaultProfilePicture = "img/defaultProfilePicture.png";
 
+                                                                                                                                  if ($profilePicture !== null) {
+                                                                                                                                    echo "img/" . $profilePicture;
+                                                                                                                                  } else {
+                                                                                                                                    echo $defaultProfilePicture;
+                                                                                                                                  }
+                                                                                                                         
+                </div>                                                                                                              
                 </div>
               </div>
+
               <div class="row mb-4">
                 <input type="hidden" name="firstname" value="<?php echo $firstname; ?>">
                 <input type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png">
@@ -63,7 +92,7 @@ include "changeName.php";
             </div>
           </form>
           <script type="text/javascript">
-            // when profile picture changes value, it automatically changes
+            // When profile picture changes value, it automatically changes
             document.getElementById("profilePicture").onchange = function() {
               document.getElementById("form").submit();
             };
@@ -120,27 +149,3 @@ include "changeName.php";
           <div class="description">
             <form action="" method="post" id="form" class="form">
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control shadow-sm" placeholder="Describe yourself..." maxlength="250" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-              <div class="services">
-                <label for="services">Service(s) you offer </label>
-                <input type="text" class="servicesOffered">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-7 col-md-7 col-sm-12 border border-1 ">
-        <div class="box px-4 py-3 m-0 bg-light h-100 text-dark">
-          <h2>Reviews</h2>
-          <P class="fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reiciendis tempore nihil.</P>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-
-</html>

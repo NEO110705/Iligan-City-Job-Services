@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!$email) {
         die("<script>alert('Invalid Email Address!');
-         window.location.href = 'signup.php';
+         window.location.href = 'profile.php';
          </script>");
     }
 
@@ -43,6 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 } else {
-    header("Location: signup.php");
+  
     exit();
 }
