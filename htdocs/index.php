@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "databaseConnection.php";
 ?>
 <!DOCTYPE html>
@@ -14,7 +15,12 @@ include "databaseConnection.php";
 
 <body>
 <?php 
-  include "header.php";
+
+  if(isset($_SESSION['loggedInUserId'])){
+    include "profileHeader.inc.php";
+  }else{
+    include "header.php";
+  }
 ?>
 
 <div class="box z-0" id="myDiv">
