@@ -19,7 +19,7 @@ include "databaseConnection.php";
   if(isset($_SESSION['loggedInUserId'])){
     include "profileHeader.inc.php";
   }else{
-    include "header.php";
+  
   }
 ?>
 
